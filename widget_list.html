@@ -1,6 +1,6 @@
 <style>
 *{box-sizing:border-box;margin:0;padding:0}
-body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Arial,sans-serif;background:var(--tg-theme-bg-color);color:var(--tg-theme-text-color);padding:10px 12px;max-width:400px}
+body{font-family:sans-serif;background:var(--tg-theme-bg-color);color:var(--tg-theme-text-color);padding:10px 12px}
 .top{display:flex;align-items:center;justify-content:space-between;padding:4px 2px 10px;border-bottom:1px solid var(--tg-theme-secondary-bg-color)}
 .logo{width:56px;display:block}
 .fb{border:1px solid var(--tg-theme-link-color);color:var(--tg-theme-link-color);background:none;border-radius:16px;padding:6px 12px;font-size:.8em;cursor:pointer}
@@ -9,52 +9,50 @@ h1{font-size:.82em;font-weight:600;text-transform:uppercase;letter-spacing:.4px;
 .f{display:flex;align-items:center;gap:10px;width:100%;border:0;background:var(--tg-theme-secondary-bg-color);border-radius:11px;padding:10px;margin-bottom:8px;cursor:pointer;text-align:left;font-family:inherit;color:inherit}
 .f:active{opacity:.75}
 .f b{display:block;font-size:.95em;line-height:1.15;text-transform:uppercase;letter-spacing:.2px}
-.f span{display:block;font-size:.78em;color:var(--tg-theme-hint-color);margin-top:2px;line-height:1.3}
-.f .dt{margin-left:auto;flex:none;font-size:.75em;font-weight:600;color:var(--tg-theme-link-color);text-align:right;line-height:1.25;max-width:88px}
+.f span{display:block;font-size:.78em;color:var(--tg-theme-hint-color);margin-top:2px}
+.f .dt{margin-left:auto;flex:none;font-size:.75em;font-weight:600;color:var(--tg-theme-link-color);text-align:right;line-height:1.25;max-width:92px}
 .f .dt.past{color:var(--tg-theme-hint-color);font-weight:400}
-.mapbtn{display:block;width:100%;background:var(--tg-theme-button-color);color:var(--tg-theme-button-text-color);border:0;border-radius:11px;padding:12px;font-size:.95em;font-weight:600;cursor:pointer;margin-top:4px}
-.mapbtn:active{opacity:.8}
-.st{font-size:.75em;text-align:center;color:var(--tg-theme-hint-color);min-height:16px;margin-top:8px}
+.m{display:block;width:100%;background:var(--tg-theme-button-color);color:var(--tg-theme-button-text-color);border:0;border-radius:11px;padding:12px;font-size:.95em;font-weight:600;cursor:pointer;margin-top:4px}
+.m:active{opacity:.8}
 </style>
-<script>function applyTheme(p){if(!p)return;var r=document.documentElement.style;r.setProperty("--tg-theme-bg-color",p.bg_color||"#fff");r.setProperty("--tg-theme-text-color",p.text_color||"#000");r.setProperty("--tg-theme-hint-color",p.hint_color||"#707579");r.setProperty("--tg-theme-link-color",p.link_color||"#3390ec");r.setProperty("--tg-theme-button-color",p.button_color||"#3390ec");r.setProperty("--tg-theme-button-text-color",p.button_text_color||"#fff");r.setProperty("--tg-theme-secondary-bg-color",p.secondary_bg_color||"#f1f1f4");}applyTheme((window.TelegramWidget||window.Telegram&&window.Telegram.WebApp||{}).themeParams);</script>
-<div class="t">
-<img class="l" src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDABIMDRANCxIQDhAUExIVGywdGxgYGzYnKSAsQDlEQz85Pj1HUGZXR0thTT0+WXlaYWltcnNyRVV9hnxvhWZwcm7/2wBDARMUFBsXGzQdHTRuST5Jbm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm7/wAARCABDAGADASIAAhEBAxEB/8QAGwAAAgMBAQEAAAAAAAAAAAAAAAUBBAYDBwL/xAA3EAABAwMDAgMECAYDAAAAAAABAgMEAAURBhITITEUIjIVUVJhBxYzNUFCceEjU1RVgpJkcpP/xAAYAQEAAwEAAAAAAAAAAAAAAAAAAgMEAf/EACARAAICAgICAwAAAAAAAAAAAAABAgMEERIxEyEyM2H/2gAMAwEAAhEDEQA/AFziLnrKU64wpsNNHytrVjb+lQrQ93SkqJj4Az6/2qpp3UHsNbp4OXk+fanS9f721JML1JI9VAY5Da1vJaBG5Sto/WtEnQ14UkEeHwRn1/tWdbd45CXcZ2r3YrYo+kDYhKfBekY9VAZy8WaXZnWm5fHucSSnYrNWLTpi43eH4mLxce4p8ysHIr51Hffbkll3h4uJJTjPerun9Wexrd4Xw3J5yrdn30Bxn6RucCIuQ+WeNHfavJpTb4b1xmNxWNvI50TuOBWiu2s/aVvcjGJs3/mzSGzz/ZlzYllHIGjnb76Ac/UW8f8AH/3/AGpDNiuwZa4zxTvQcHacitePpC69YJxn4qyVymePnuydmzkVnHuoBvF0bdZcZt9osbFjIyurLLN10a8y9IU2Y7qylTaFZ3dK62/XHgoLMcQ93GMZz3pfqTUvtxhhvw/FxKKs5zmgEB70UHvUUBIp3aYMd+HvdRuVuxmkg71o7H93/wCRqu1tR9GrEipWaZ1Fqins1mgWiN1/g/ga43RiU+tsxSrAHXCsUuei3FlpTjinAhPc76pgm1vka7ZRg3HgUHBhZA99do8J6SCWk5AojQ3pZPEndjv1p3aIzsVCw8kpz86unPijHTT5Jfhn3mlsOKbcGFJ718U4uNtkyJrjjbe5Kj0Oe9KXG1NrUhQwpJwalGSaKrK3BnxRRRUisk96ipPeigAVo7J93/5Gs4O9aOx/d/b8xqq74mzC+w6zZ6ISkBaSdwyMVQmXhp+I40lCgVjpUaizysZ6eWk9RrrXFMnk5E1NxXQytE5mIV8wUd3bbTmLLalgloKGPirKU0tU9qI2oO5ya7ZXv2iONkOL4voZvXWNGfLbiXNyT1xWdkuB2Q4tOdqlEjNdLg+mRMcdRnao9KrVKEFEqvulY9MKipoqwzlqHbpc8qESO49t77BnFWDp67JSSbe+ABknbTnSd0jWB6U3clLacJHlCSa0Lus7MtpaRIdyUkfZmgPNEoUpYSlOVE4A+dN2bTfWmwlmHJSg9QAKWsOJRMbcUSEhzcT8s16O3rSzJbSkyHcgAfZmh1Nro8+uUefHcQm4tuIWRlIc/EVMSz3CYzzRobrrZONyR0zTbWd3h3eXGchOKWlCCFbk4wc0z0pqW22yzJjy3nEuBajgIJGDQN77MtKs9whsF2TDdabBxuUOlcIkORNd44rK3V99qR1rY6q1LbbnZlx4rzinCoEAoIFJNJXONa7mp6W4pCCnGUjNDhW+rl3/ALdI/wBaXLaW26ptaSlaTtKT3B91em/XWy/1Dv8A5mvO50ht66vvtqJQt4rBPfGaAsDTt2Iz7PkY/wCtVJkCVAWEy2FsqPUBYxmvRUa0swQkGQ7kD+WazOqbhHv9xjptq1uqxjBTigGuu4kdPE+llAdczvWB1VWO2JwPKO9FFAAbR18oqeNOPSKKKAjjTkeUUBtPwiiigDjT08oo40fCKKKAnjT8Ir4UhPwiiigOWBuHT8a3OhIcdQdfUygut+lZHVNFFAf/2Q==" alt="F+">
-<button class="f" id="fb">✉ Обратная связь</button>
-</div>
-<h1>Фестивали «F+» · 11 событий</h1>
+<div class="top"><img class="logo" src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDABIMDRANCxIQDhAUExIVGywdGxgYGzYnKSAsQDlEQz85Pj1HUGZXR0thTT0+WXlaYWltcnNyRVV9hnxvhWZwcm7/2wBDARMUFBsXGzQdHTRuST5Jbm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm7/wAARCABDAGADASIAAhEBAxEB/8QAGwAAAgMBAQEAAAAAAAAAAAAAAAUBBAYDBwL/xAA3EAABAwMDAgMECAYDAAAAAAABAgMEAAURBhITITEUIjIVUVJhBxYzNUFCceEjU1RVgpJkcpP/xAAYAQEAAwEAAAAAAAAAAAAAAAAAAgMEAf/EACARAAICAgICAwAAAAAAAAAAAAABAgMEERIxEyEyM2H/2gAMAwEAAhEDEQA/AFziLnrKU64wpsNNHytrVjb+lQrQ93SkqJj4Az6/2qpp3UHsNbp4OXk+fanS9f721JML1JI9VAY5Da1vJaBG5Sto/WtEnQ14UkEeHwRn1/tWdbd45CXcZ2r3YrYo+kDYhKfBekY9VAZy8WaXZnWm5fHucSSnYrNWLTpi43eH4mLxce4p8ysHIr51Hffbkll3h4uJJTjPerun9Wexrd4Xw3J5yrdn30Bxn6RucCIuQ+WeNHfavJpTb4b1xmNxWNvI50TuOBWiu2s/aVvcjGJs3/mzSGzz/ZlzYllHIGjnb76Ac/UW8f8AH/3/AGpDNiuwZa4zxTvQcHacitePpC69YJxn4qyVymePnuydmzkVnHuoBvF0bdZcZt9osbFjIyurLLN10a8y9IU2Y7qylTaFZ3dK62/XHgoLMcQ93GMZz3pfqTUvtxhhvw/FxKKs5zmgEB70UHvUUBIp3aYMd+HvdRuVuxmkg71o7H93/wCRqu1tR9GrEipWaZ1Fqins1mgWiN1/g/ga43RiU+tsxSrAHXCsUuei3FlpTjinAhPc76pgm1vka7ZRg3HgUHBhZA99do8J6SCWk5AojQ3pZPEndjv1p3aIzsVCw8kpz86unPijHTT5Jfhn3mlsOKbcGFJ718U4uNtkyJrjjbe5Kj0Oe9KXG1NrUhQwpJwalGSaKrK3BnxRRRUisk96ipPeigAVo7J93/5Gs4O9aOx/d/b8xqq74mzC+w6zZ6ISkBaSdwyMVQmXhp+I40lCgVjpUaizysZ6eWk9RrrXFMnk5E1NxXQytE5mIV8wUd3bbTmLLalgloKGPirKU0tU9qI2oO5ya7ZXv2iONkOL4voZvXWNGfLbiXNyT1xWdkuB2Q4tOdqlEjNdLg+mRMcdRnao9KrVKEFEqvulY9MKipoqwzlqHbpc8qESO49t77BnFWDp67JSSbe+ABknbTnSd0jWB6U3clLacJHlCSa0Lus7MtpaRIdyUkfZmgPNEoUpYSlOVE4A+dN2bTfWmwlmHJSg9QAKWsOJRMbcUSEhzcT8s16O3rSzJbSkyHcgAfZmh1Nro8+uUefHcQm4tuIWRlIc/EVMSz3CYzzRobrrZONyR0zTbWd3h3eXGchOKWlCCFbk4wc0z0pqW22yzJjy3nEuBajgIJGDQN77MtKs9whsF2TDdabBxuUOlcIkORNd44rK3V99qR1rY6q1LbbnZlx4rzinCoEAoIFJNJXONa7mp6W4pCCnGUjNDhW+rl3/ALdI/wBaXLaW26ptaSlaTtKT3B91em/XWy/1Dv8A5mvO50ht66vvtqJQt4rBPfGaAsDTt2Iz7PkY/wCtVJkCVAWEy2FsqPUBYxmvRUa0swQkGQ7kD+WazOqbhHv9xjptq1uqxjBTigGuu4kdPE+llAdczvWB1VWO2JwPKO9FFAAbR18oqeNOPSKKKAjjTkeUUBtPwiiigDjT08oo40fCKKKAnjT8Ir4UhPwiiigOWBuHT8a3OhIcdQdfUygut+lZHVNFFAf/2Q=="><button class="fb" id="fb">✉ Обратная связь</button></div>
+<h1>Фестивали «F+»</h1>
 <div id="list"></div>
-<button class="m" id="map">🗺️ Открыть карту России</button>
-
+<button class="m" id="map">🗺️ Карта России</button>
 <script>
-const F=[["vodoley", "ВОДОЛЕЙ", "СПб", "Фестиваль короткометражного кино", "2026-11-12", "2026-11-13"],["scenarium", "СЦЕНАРИУМ", "Москва", "Фестиваль сценариев", "2026-11-17", "2026-11-18"],["nasledie", "НАСЛЕДИЕ", "Москва", "Кинофестиваль", null, null],["maykop", "МАЙКОПСКИЙ МЕЖДУНАРОДНЫЙ ФИЛЬМ ФЕСТИВАЛЬ", "Майкоп", "Международный кинофестиваль", "2027-01-22", "2027-01-24"],["zov", "ZOV", "Воткинск", "Всероссийский кинофестиваль", "2027-04-12", "2027-04-14"],["whitenights", "БЕЛЫЕ НОЧИ", "СПб", "Кинофестиваль", "2027-04-22", "2027-04-24"],["bridges", "МОСТЫ", "СПб", "Международный кинофестиваль", "2027-05-06", "2027-05-08"],["sochi", "СОЧИ ФИЛЬМ ФЕСТИВАЛЬ", "Сочи", "Кинофестиваль", "2027-06-18", "2027-06-20"],["feodosia", "ФЕОДОСИЙСКИЙ КИНО ФЕСТИВАЛЬ", "Феодосия", "Кинофестиваль", "2027-08-20", "2027-08-22"],["vtk", "ВТК СТАРТ ФЕСТ", "Воткинск", "Фестиваль детского и юношеского кино", "2027-09-20", "2027-09-22"],["ozhivi", "ОЖИВИ!", "СПб", "AI-кинофестиваль", null, null]];
-const W=window.TelegramWidget||window.Telegram&&window.Telegram.WebApp;
-const MAP="map.html";
-const MO=["янв","фев","мар","апр","мая","июн","июл","авг","сен","окт","ноя","дек"];
-const today=()=>{const d=new Date();return d.getFullYear()+"-"+String(d.getMonth()+1).padStart(2,"0")+"-"+String(d.getDate()).padStart(2,"0");};
-function fmt(s,e){
- if(!s)return"даты уточн.";
- const[a,b,c]=s.split("-"),[d,f,g]=e.split("-");
- return b===f?parseInt(c,10)+"–"+parseInt(g,10)+" "+MO[b-1]+" "+d:parseInt(c,10)+" "+MO[b-1]+" – "+parseInt(g,10)+" "+MO[f-1]+" "+e.slice(0,4);
-}
-function render(){
- const t=today();
- L.innerHTML=F.map(x=>{
-  const past=x.e&&x.e<t, up=x.s&&x.s<=t&&x.e>=t;
-  const dt=past?"состоялся":up?"идёт сейчас":fmt(x[4],x[5]);
-  return '<button class="f" data-id="'+x[0]+'"><span><b>'+x[1]+'</b><span>'+x[2]+' · '+x[3]+'</span></span><span class="dt'+(past?" past":"")+'">'+dt+'</span></button>';
- }).join("");
- Q.forEach(b=>b.addEventListener("click",()=>om(b.dataset.id)));
-}
-function om(id){
- const u=id?MAP+"#"+id:MAP;
- if(W&&W.openLink)W.openLink(u);else location.href=u;
-}
-M.addEventListener("click",()=>om(null));
-if(r.url){om(r.url);return;}}catch(e){}
-  }
- },e=>
- else location.href="mailto:SUPPORT@FESTIVALPLUS.INFO";
-});
-render();
-if(W){W.onEvent&&W.onEvent("themeChanged",()=>applyTheme(W.themeParams));W.onEvent&&W.onEvent("chatDataChanged",()=>{});W.ready&&W.ready();}
+function at(p){if(!p)return;var r=document.documentElement.style;
+r.setProperty("--tg-theme-bg-color",p.bg_color||"#fff");
+r.setProperty("--tg-theme-text-color",p.text_color||"#000");
+r.setProperty("--tg-theme-hint-color",p.hint_color||"#707579");
+r.setProperty("--tg-theme-link-color",p.link_color||"#3390ec");
+r.setProperty("--tg-theme-button-color",p.button_color||"#3390ec");
+r.setProperty("--tg-theme-button-text-color",p.button_text_color||"#fff");
+r.setProperty("--tg-theme-secondary-bg-color",p.secondary_bg_color||"#f1f1f4");}
+var W=window.Telegram||(window.TelegramWebApp);
+var W=(window.Telegram&&window.Telegram.WebApp)||window.TelegramWidget;
+at(W&&W.themeParams);
+var F=[["vodoley","ВОДОЛЕЙ","Санкт-Петербург","2026-11-12","2026-11-13"],["scenarium","СЦЕНАРИУМ","Москва","2026-11-17","2026-11-18"],["nasledie","НАСЛЕДИЕ","Москва",null,null],["maykop","МАЙКОПСКИЙ МЕЖДУНАРОДНЫЙ ФИЛЬМ ФЕСТИВАЛЬ","Майкоп","2027-01-22","2027-01-24"],["zov","ZOV","Воткинск","2027-04-12","2027-04-14"],["whitenights","БЕЛЫЕ НОЧИ","Санкт-Петербург","2027-04-22","2027-04-24"],["bridges","МОСТЫ","Санкт-Петербург","2027-05-06","2027-05-08"],["sochi","СОЧИ ФИЛЬМ ФЕСТИВАЛЬ","Сочи","2027-06-18","2027-06-20"],["feodosia","ФЕОДОСИЙСКИЙ КИНО ФЕСТИВАЛЬ","Феодосия","2027-08-20","2027-08-22"],["vtk","ВТК СТАРТ ФЕСТ","Воткинск","2027-09-20","2027-09-22"],["ozhivi","ОЖИВИ!","Санкт-Петербург",null,null]];
+var MO=["янв","фев","мар","апр","мая","июн","июл","авг","сен","окт","ноя","дек"];
+function td(){var d=new Date();return d.getFullYear()+"-"+String(d.getMonth()+1).padStart(2,"0")+"-"+String(d.getDate()).padStart(2,"0");}
+function fmt(s,e){if(!s||!e)return"даты уточн.";var a=s.split("-"),b=e.split("-");
+return a[1]===b[1]?parseInt(a[2],10)+"–"+parseInt(b[2],10)+" "+MO[+a[1]-1]+" "+a[0]:parseInt(a[2],10)+" "+MO[+a[1]-1]+" – "+parseInt(b[2],10)+" "+MO[+b[1]-1]+" "+e.slice(0,4);}
+function om(id){var u="map.html"+(id?"#"+id:"");
+if(W&&W.openLink)W.openLink(u);else location.href=u;}
+function rd(){var t=td();
+document.getElementById("list").innerHTML=F.map(function(x){
+var past=x[4]&&x[4]<t,up=x[3]&&x[3]<=t&&x[4]>=t;
+var dt=past?"состоялся":up?"идёт сейчас":fmt(x[3],x[4]);
+return '<button class="f" data-i="'+x[0]+'"><span><b>'+x[1]+'</b><span>'+x[2]+'</span></span><span class="dt'+(past?" past":"")+'">'+dt+'</span></button>';}).join("");
+document.querySelectorAll(".f").forEach(function(b){b.onclick=function(){om(b.getAttribute("data-i"))};});}
+document.getElementById("map").onclick=function(){om(null)};
+document.getElementById("fb").onclick=function(){
+if(W&&W.request)W.request("feedback").then(function(a){
+var u=null;try{var r=JSON.parse(a.result);if(r&&r.url)u=r.url;}catch(e){}
+if(u){if(W.openLink)W.openLink(u);else location.href=u;}
+},function(){},
+function(){});
+else location.href="mailto:support@festivalplus.info";};
+rd();
+if(W){if(W.onEvent)W.onEvent("themeChanged",function(){at(W.themeParams)});
+if(W.ready)W.ready();}
 </script>
