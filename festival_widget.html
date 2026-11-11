@@ -1,0 +1,99 @@
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body {
+font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+background: var(--tg-theme-bg-color);
+color: var(--tg-theme-text-color);
+padding: 12px;
+max-width: 400px;
+}
+.header { text-align: center; margin-bottom: 12px; }
+.logo { margin-bottom: 6px; }
+.logo svg { width: 110px; height: auto; display: block; margin: 0 auto; }
+.title { font-size: 1.15em; font-weight: 700; margin-bottom: 4px; }
+.subtitle { color: var(--tg-theme-hint-color); font-size: 0.85em; }
+.free-badge { display: inline-block; background: #34c759; color: #fff; padding: 3px 10px; border-radius: 12px; font-size: 0.8em; font-weight: 600; margin-top: 6px; }
+.card { background: var(--tg-theme-secondary-bg-color); border-radius: 12px; padding: 12px; margin-bottom: 10px; }
+.card-title { font-size: 0.85em; color: var(--tg-theme-hint-color); margin-bottom: 6px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.03em; }
+.info-row { display: flex; justify-content: space-between; align-items: center; padding: 6px 0; border-bottom: 1px solid var(--tg-theme-secondary-bg-color); }
+.info-row:last-child { border-bottom: none; }
+.info-label { font-size: 0.9em; color: var(--tg-theme-hint-color); }
+.info-value { font-size: 0.9em; font-weight: 500; }
+.program-item { display: flex; gap: 8px; margin-bottom: 8px; align-items: flex-start; }
+.program-item:last-child { margin-bottom: 0; }
+.time { color: var(--tg-theme-link-color); font-weight: 600; font-size: 0.9em; min-width: 55px; padding-top: 2px; }
+.desc { font-size: 0.9em; line-height: 1.3; }
+.btn-group { display: flex; flex-direction: column; gap: 8px; margin-top: 4px; }
+.action-btn { background: var(--tg-theme-button-color); color: var(--tg-theme-button-text-color); border: none; border-radius: 10px; padding: 12px; font-size: 1em; font-weight: 500; cursor: pointer; text-align: center; }
+.action-btn:active { opacity: 0.8; }
+.action-btn.secondary { background: var(--tg-theme-secondary-bg-color); color: var(--tg-theme-text-color); }
+.status { text-align: center; font-size: 0.8em; color: var(--tg-theme-hint-color); margin-top: 8px; min-height: 18px; }
+</style>
+<div class="header"><div class="logo"><img src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDABIMDRANCxIQDhAUExIVGywdGxgYGzYnKSAsQDlEQz85Pj1HUGZXR0thTT0+WXlaYWltcnNyRVV9hnxvhWZwcm7/2wBDARMUFBsXGzQdHTRuST5Jbm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm7/wAARCABDAGADASIAAhEBAxEB/8QAGwAAAgMBAQEAAAAAAAAAAAAAAAUBBAYDBwL/xAA3EAABAwMDAgMECAYDAAAAAAABAgMEAAURBhITITEUIjIVUVJhBxYzNUFCceEjU1RVgpJkcpP/xAAYAQEAAwEAAAAAAAAAAAAAAAAAAgMEAf/EACARAAICAgICAwAAAAAAAAAAAAABAgMEERIxEyEyM2H/2gAMAwEAAhEDEQA/AFziLnrKU64wpsNNHytrVjb+lQrQ93SkqJj4Az6/2qpp3UHsNbp4OXk+fanS9f721JML1JI9VAY5Da1vJaBG5Sto/WtEnQ14UkEeHwRn1/tWdbd45CXcZ2r3YrYo+kDYhKfBekY9VAZy8WaXZnWm5fHucSSnYrNWLTpi43eH4mLxce4p8ysHIr51Hffbkll3h4uJJTjPerun9Wexrd4Xw3J5yrdn30Bxn6RucCIuQ+WeNHfavJpTb4b1xmNxWNvI50TuOBWiu2s/aVvcjGJs3/mzSGzz/ZlzYllHIGjnb76Ac/UW8f8AH/3/AGpDNiuwZa4zxTvQcHacitePpC69YJxn4qyVymePnuydmzkVnHuoBvF0bdZcZt9osbFjIyurLLN10a8y9IU2Y7qylTaFZ3dK62/XHgoLMcQ93GMZz3pfqTUvtxhhvw/FxKKs5zmgEB70UHvUUBIp3aYMd+HvdRuVuxmkg71o7H93/wCRqu1tR9GrEipWaZ1Fqins1mgWiN1/g/ga43RiU+tsxSrAHXCsUuei3FlpTjinAhPc76pgm1vka7ZRg3HgUHBhZA99do8J6SCWk5AojQ3pZPEndjv1p3aIzsVCw8kpz86unPijHTT5Jfhn3mlsOKbcGFJ718U4uNtkyJrjjbe5Kj0Oe9KXG1NrUhQwpJwalGSaKrK3BnxRRRUisk96ipPeigAVo7J93/5Gs4O9aOx/d/b8xqq74mzC+w6zZ6ISkBaSdwyMVQmXhp+I40lCgVjpUaizysZ6eWk9RrrXFMnk5E1NxXQytE5mIV8wUd3bbTmLLalgloKGPirKU0tU9qI2oO5ya7ZXv2iONkOL4voZvXWNGfLbiXNyT1xWdkuB2Q4tOdqlEjNdLg+mRMcdRnao9KrVKEFEqvulY9MKipoqwzlqHbpc8qESO49t77BnFWDp67JSSbe+ABknbTnSd0jWB6U3clLacJHlCSa0Lus7MtpaRIdyUkfZmgPNEoUpYSlOVE4A+dN2bTfWmwlmHJSg9QAKWsOJRMbcUSEhzcT8s16O3rSzJbSkyHcgAfZmh1Nro8+uUefHcQm4tuIWRlIc/EVMSz3CYzzRobrrZONyR0zTbWd3h3eXGchOKWlCCFbk4wc0z0pqW22yzJjy3nEuBajgIJGDQN77MtKs9whsF2TDdabBxuUOlcIkORNd44rK3V99qR1rY6q1LbbnZlx4rzinCoEAoIFJNJXONa7mp6W4pCCnGUjNDhW+rl3/ALdI/wBaXLaW26ptaSlaTtKT3B91em/XWy/1Dv8A5mvO50ht66vvtqJQt4rBPfGaAsDTt2Iz7PkY/wCtVJkCVAWEy2FsqPUBYxmvRUa0swQkGQ7kD+WazOqbhHv9xjptq1uqxjBTigGuu4kdPE+llAdczvWB1VWO2JwPKO9FFAAbR18oqeNOPSKKKAjjTkeUUBtPwiiigDjT08oo40fCKKKAnjT8Ir4UhPwiiigOWBuHT8a3OhIcdQdfUygut+lZHVNFFAf/2Q==" alt="F+" style="width:48px;display:block;margin:0 auto;"></div>
+<div class="title" id="festivalName">Festival Plus</div>
+<div class="subtitle" id="festivalDate">Загрузка...</div>
+<span class="free-badge">Вход бесплатный</span>
+</div>
+<div class="card">
+<div class="card-title">📅 Дата и время</div>
+<div class="info-row"><span class="info-label">Дата</span><span class="info-value" id="date">—</span></div>
+<div class="info-row"><span class="info-label">Время</span><span class="info-value" id="time">—</span></div>
+</div>
+<div class="card">
+<div class="card-title">📍 Локация</div>
+<div class="info-value" id="location">—</div>
+</div>
+<div class="card">
+<div class="card-title">🎤 Программа</div>
+<div id="program">
+<div style="color:var(--tg-theme-hint-color);font-size:0.9em">Загрузка программы...</div>
+</div>
+</div>
+<div class="btn-group">
+<button class="action-btn" id="contactBtn">📞 Связаться с организатором</button>
+<button class="action-btn secondary" id="editProgramBtn">✏️ Редактировать программу</button>
+</div>
+<div class="status" id="status">&nbsp;</div>
+<script>
+const W = window.TelegramWidget;
+const $ = (id) => document.getElementById(id);
+let rev = -1;
+function renderProgram(items) {
+if (!items || !items.length) {
+$('program').innerHTML = '<div style="color:var(--tg-theme-hint-color);font-size:0.9em">Программа пока пуста</div>';
+return;
+}
+let html = '';
+for (const it of items) {
+html += '<div class="program-item"><span class="time">' + it.t + '</span><span class="desc">' + it.d + '</span></div>';
+}
+$('program').innerHTML = html;
+}
+function showState(json) {
+let s = null; try { s = JSON.parse(json); } catch (e) {}
+if (!s || s.r < rev) return false; rev = s.r;
+if (s.name) $('#festivalName').textContent = s.name;
+if (s.date) { $('#date').textContent = s.date; $('#festivalDate').textContent = s.date; }
+if (s.time) $('#time').textContent = s.time;
+if (s.location) $('#location').textContent = s.location;
+if (s.program) renderProgram(s.program);
+return true;
+}
+function setStatus(txt) { $('#status').textContent = txt || '\u00a0'; }
+function ask(data) {
+if (!W) return;
+setStatus('Отправка...');
+W.request(data).then(
+(ans) => {
+if (ans.result) {
+try { const r = JSON.parse(ans.result); if (r.url) { W.openLink(r.url); setStatus(''); return; } } catch (e) {}
+setStatus(ans.result);
+}
+},
+(err) => setStatus('Ошибка: ' + err.code)
+);
+}
+$('#contactBtn').addEventListener('click', () => ask('contact'));
+$('#editProgramBtn').addEventListener('click', () => ask('edit_program'));
+if (W) { W.onEvent('chatDataChanged', () => showState(W.chatData)); showState(W.chatData); W.ready(); }
+</script>
